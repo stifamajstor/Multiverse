@@ -28,13 +28,4 @@ class Portals {
 
     return true;
   }
-  //   collides(obj) {
-  //     if (this.sizeX < obj.sizeX) {
-  //       return true;
-  //     }
-
-  //     if (this.y + this.height == obj.y || obj.y + obj.height == this.y) {
-  //       return true;
-  //     }
-  //   }
 }

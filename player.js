@@ -10,11 +10,6 @@ class Player {
     this.yDir = 0;
   }
 
-  //   setup() {
-  //     this.x = 100;
-  //     this.y = 100;
-  //   }
-
   draw() {
     image(this.img1, this.x, this.y, this.width, this.height);
     this.x += this.xDir;
