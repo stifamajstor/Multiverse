@@ -1,0 +1,5 @@
+class Explosion {
+    constructor() {
+        
+    }
+}

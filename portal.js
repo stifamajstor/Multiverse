@@ -1,14 +1,17 @@
 class Portals {
   constructor() {
-    this.width = 180;
-    this.height = 180;
-    this.x = random(1400 - 180);
-    this.y = random(750 - 180);
+    this.width = 250;
+    this.height = 250;
+    this.x = random(1400 - 200);
+    this.y = random(750 - 200);
     this.portal = loadImage("assests/blackHole.gif");
   }
 
   draw() {
+    push();
+    tint(255, 100);
     image(this.portal, this.x, this.y, this.width, this.height);
+    pop();
   }
 
   collides(obj) {

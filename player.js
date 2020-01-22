@@ -1,6 +1,7 @@
 class Player {
   constructor() {
-    this.img = loadImage("assests/rocket.jpg");
+    this.img1 = loadImage("assests/rocket.jpg");
+    this.img2 = loadImage("assests/explosion.gif");
     this.width = 70;
     this.height = 70;
     this.x = 350;
@@ -15,7 +16,7 @@ class Player {
   //   }
 
   draw() {
-    image(this.img, this.x, this.y, this.width, this.height);
+    image(this.img1, this.x, this.y, this.width, this.height);
     this.x += this.xDir;
     this.y += this.yDir;
   }

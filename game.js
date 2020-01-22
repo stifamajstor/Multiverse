@@ -1,36 +1,44 @@
 class Game {
   constructor() {
-    //
+    this.level = 0;
+    this.gameOver = false;
   }
 
   init() {
     this.background = new Background();
     this.player = new Player();
     this.portal = new Portals();
-    // this.explosion = new Explosion();
+  }
+
+  reset() {
+    this.level = 0;
   }
 
   draw() {
     this.background.draw();
     this.player.draw();
     this.portal.draw();
-    // this.explosion.draw();
 
     if (this.portal.collides(this.player)) {
-      console.log("KABOOM");
-      const newXPlayer = random(1, 1400);
-      const newYPlayer = random(1, 750);
-      const newXPortal = random(1, 1400 - this.portal.width);
-      const newYPortal = random(1, 750 - this.portal.height);
+      const newXPlayer = random(70, 1300);
+      const newYPlayer = random(70, 650);
+      const newXPortal = random(70, 1400 - this.portal.width);
+      const newYPortal = random(70, 750 - this.portal.height);
       const randomNumberX = (Math.floor(Math.random() * 4) - 1) * 5;
       const randomNumberY = (Math.floor(Math.random() * 4) - 1) * 5;
+      this.level++;
       this.player.x = newXPlayer;
       this.player.y = newYPlayer;
       this.portal.x = newXPortal;
       this.portal.y = newYPortal;
       this.player.setDir(randomNumberX, randomNumberY);
       this.background.reDraw();
+      return this.level;
     }
+
+    textSize(60);
+    fill(random(255), random(255), random(255));
+    text(`Level: ${this.level}`, 10 / 1.2, 60);
 
     if (
       this.player.x > 0 &&
@@ -38,13 +46,18 @@ class Game {
       this.player.y > 0 &&
       this.player.y + this.player.height < 750
     ) {
-      console.log("inside if");
     } else {
-      textSize(32);
+      this.player.img1 = this.player.img2;
+      textSize(200);
       fill(random(255), random(255), random(255));
-      text(`Game Over`, width - width / 1.2, 30);
+      text(`Game Over`, 190, 400);
 
-      //   noLoop();
+      textSize(70);
+      fill(random(255), random(255), random(255));
+      text(`Press SPACE to restart`, 360, 600);
+
+      this.player.setDir(0, 0);
+      this.gameOver = true;
     }
   }
 }

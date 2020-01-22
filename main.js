@@ -1,12 +1,19 @@
 function keyPressed() {
-  if (keyCode === LEFT_ARROW) {
-    game.player.setDir(-5, 0);
-  } else if (keyCode === RIGHT_ARROW) {
-    game.player.setDir(5, 0);
-  } else if (keyCode === DOWN_ARROW) {
-    game.player.setDir(0, 5);
-  } else if (keyCode === UP_ARROW) {
-    game.player.setDir(0, -5);
+  if (!game.gameOver) {
+    if (keyCode === LEFT_ARROW) {
+      game.player.setDir(-10, 0);
+    } else if (keyCode === RIGHT_ARROW) {
+      game.player.setDir(10, 0);
+    } else if (keyCode === DOWN_ARROW) {
+      game.player.setDir(0, 10);
+    } else if (keyCode === UP_ARROW) {
+      game.player.setDir(0, -10);
+    }
+  } else if (keyCode === 32) {
+    preload();
+    draw();
+    game.reset();
+    game.gameOver = false;
   }
 }
 
@@ -18,7 +25,6 @@ function preload() {
 
 function setup() {
   createCanvas(1400, 750);
-  //   game.setup();
 }
 
 function draw() {
