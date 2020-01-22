@@ -5,8 +5,6 @@ class Portals {
     this.x = random(1400 - 180);
     this.y = random(750 - 180);
     this.portal = loadImage("assests/blackHole.gif");
-    this.sizeX = this.x + this.width;
-    this.sizeY = this.y + this.height;
   }
 
   draw() {
@@ -24,8 +22,8 @@ class Portals {
     if (this.y + this.height < obj.y || obj.y + obj.height < this.y) {
       return false;
     }
-    
-    return true 
+
+    return true;
   }
   //   collides(obj) {
   //     if (this.sizeX < obj.sizeX) {

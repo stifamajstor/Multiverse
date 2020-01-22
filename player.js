@@ -3,12 +3,10 @@ class Player {
     this.img = loadImage("assests/rocket.jpg");
     this.width = 70;
     this.height = 70;
-    this.x = 100;
-    this.y = 100;
+    this.x = 350;
+    this.y = 300;
     this.xDir = 0;
     this.yDir = 0;
-    this.sizeX = this.x + this.width
-    this.sizeY = this.y + this.height
   }
 
   //   setup() {

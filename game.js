@@ -7,48 +7,44 @@ class Game {
     this.background = new Background();
     this.player = new Player();
     this.portal = new Portals();
+    // this.explosion = new Explosion();
   }
 
   draw() {
     this.background.draw();
     this.player.draw();
     this.portal.draw();
+    // this.explosion.draw();
 
-    //collision - to finish
-
-    if (
-      this.portal.collides(this.player) &&
-      this.portal.x + this.portal.width >= 0
-    ) {
-      const newXPlayer = random(0, width);
-      const newYPlayer = random(0, height);
-      const newXPortal = random(0, width);
-      const newYPortal = random(0, height);
+    if (this.portal.collides(this.player)) {
+      console.log("KABOOM");
+      const newXPlayer = random(1, 1400);
+      const newYPlayer = random(1, 750);
+      const newXPortal = random(1, 1400 - this.portal.width);
+      const newYPortal = random(1, 750 - this.portal.height);
+      const randomNumberX = (Math.floor(Math.random() * 4) - 1) * 5;
+      const randomNumberY = (Math.floor(Math.random() * 4) - 1) * 5;
       this.player.x = newXPlayer;
       this.player.y = newYPlayer;
       this.portal.x = newXPortal;
       this.portal.y = newYPortal;
+      this.player.setDir(randomNumberX, randomNumberY);
+      this.background.reDraw();
     }
-    // if (
-    //   this.portal.x + this.portal.width < this.player.x ||
-    //   this.player.x + this.player.width < this.portal.x
-    // ) {
-    //   console.log(this.portal.x, this.player.x);
 
-    //   //when they collide, move them to a random location
-    // }
+    if (
+      this.player.x > 0 &&
+      this.player.x + this.player.width < 1400 &&
+      this.player.y > 0 &&
+      this.player.y + this.player.height < 750
+    ) {
+      console.log("inside if");
+    } else {
+      textSize(32);
+      fill(random(255), random(255), random(255));
+      text(`Game Over`, width - width / 1.2, 30);
 
-    // if (
-    //   this.portal.y + this.portal.height < this.player.y ||
-    //   this.player.y + this.player.height < this.portal.y
-    // ) {
-    //   console.log(this.portal.y, this.player.y);
-    // }
-
-    //create new portal when player collides
+      //   noLoop();
+    }
   }
-
-  //   setup() {
-  //     this.player.setup();
-  //   }
 }
