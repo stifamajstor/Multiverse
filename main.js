@@ -28,6 +28,17 @@ function setup() {
 }
 
 function draw() {
+  if (
+    keyCode === LEFT_ARROW ||
+    keyCode === RIGHT_ARROW ||
+    keyCode === DOWN_ARROW ||
+    keyCode === UP_ARROW
+  ) {
+    game.started = true;
+  }
+  if (!game.started) {
+    return game.drawStartScreen();
+  }
   game.draw();
 }
 

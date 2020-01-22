@@ -2,6 +2,7 @@ class Game {
   constructor() {
     this.level = 0;
     this.gameOver = false;
+    this.gameStarted = false;
   }
 
   init() {
@@ -12,6 +13,20 @@ class Game {
 
   reset() {
     this.level = 0;
+  }
+
+  drawStartScreen() {
+    textSize(170);
+    fill(random(255), random(255), random(255));
+    text(`MULTIVERSE`, 180, 200);
+
+    textSize(40);
+    fill(random(255), random(255), random(255));
+    text(`Control Space Ship with UP, DOWN, LEFT and RIGHT arrows`, 180, 400);
+
+    textSize(60);
+    fill(random(255), random(255), random(255));
+    text(`Press any arrow to start`, 410, 590);
   }
 
   draw() {
