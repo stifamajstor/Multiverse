@@ -39,8 +39,8 @@ class Game {
     this.portal.draw();
 
     if (this.portal.collides(this.player)) {
-      const newXPlayer = random(100, 1300);
-      const newYPlayer = random(100, 650);
+      const newXPlayer = random(200, 1200);
+      const newYPlayer = random(200, 550);
       const newXPortal = random(70, 1400 - this.portal.width);
       const newYPortal = random(70, 750 - this.portal.height);
       const randomNumberX = (Math.floor(Math.random() * 4) - 1) * 5;
@@ -66,9 +66,9 @@ class Game {
       this.player.y + this.player.height < 750
     ) {
     } else {
-      this.player.width = 100;
-      this.player.height = 100;
-      this.player.img1 = this.player.img2;
+      // this.player.width = 100;
+      // this.player.height = 100;
+      this.player.playerImg = this.player.img2;
       textSize(200);
       fill(random(255), random(255), random(255));
       text(`Game Over`, 170, 400);
@@ -79,6 +79,7 @@ class Game {
 
       this.player.setDir(0, 0);
       this.gameOver = true;
+      console.log("game over");
     }
   }
 }

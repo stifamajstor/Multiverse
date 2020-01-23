@@ -1,6 +1,10 @@
 class Player {
   constructor() {
-    this.img1 = loadImage("assests/ship_up.jpeg");
+    this.playerImg = loadImage("assests/ship_up.jpeg");
+    this.playerUp = loadImage("assests/ship_up.jpeg");
+    this.playerDown = loadImage("assests/ship_down.jpeg");
+    this.playerLeft = loadImage("assests/ship_left.jpeg");
+    this.playerRight = loadImage("assests/ship_right.jpeg");
     this.img2 = loadImage("assests/explosion.gif");
     this.width = 70;
     this.height = 70;
@@ -11,7 +15,7 @@ class Player {
   }
 
   draw() {
-    image(this.img1, this.x, this.y, this.width, this.height);
+    image(this.playerImg, this.x, this.y, this.width, this.height);
     this.x += this.xDir;
     this.y += this.yDir;
   }

@@ -2,14 +2,19 @@ function keyPressed() {
   if (!game.gameOver) {
     if (keyCode === LEFT_ARROW) {
       game.player.setDir(-10, 0);
+      game.player.playerImg = game.player.playerLeft;
     } else if (keyCode === RIGHT_ARROW) {
       game.player.setDir(10, 0);
+      game.player.playerImg = game.player.playerRight;
     } else if (keyCode === DOWN_ARROW) {
       game.player.setDir(0, 10);
+      game.player.playerImg = game.player.playerDown;
     } else if (keyCode === UP_ARROW) {
       game.player.setDir(0, -10);
+      game.player.playerImg = game.player.playerUp;
     }
   } else if (keyCode === 32) {
+    console.log("space pressed");
     preload();
     draw();
     game.reset();
