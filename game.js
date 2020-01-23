@@ -66,8 +66,8 @@ class Game {
       this.player.y + this.player.height < 750
     ) {
     } else {
-      // this.player.width = 100;
-      // this.player.height = 100;
+      this.player.width = 100;
+      this.player.height = 100;
       this.player.playerImg = this.player.img2;
       textSize(200);
       fill(random(255), random(255), random(255));

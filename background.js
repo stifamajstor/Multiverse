@@ -41,7 +41,6 @@ class Background {
   }
 
   reDraw() {
-    // this.randomBackg = color(random(255), random(255), random(255));
     this.randomBackg = random(this.backgrounds);
     background(this.randomBackg);
   }
