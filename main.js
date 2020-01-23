@@ -14,7 +14,6 @@ function keyPressed() {
       game.player.playerImg = game.player.playerUp;
     }
   } else if (keyCode === 32) {
-    console.log("space pressed");
     preload();
     draw();
     game.reset();

@@ -3,6 +3,7 @@ class Game {
     this.level = 0;
     this.gameOver = false;
     this.gameStarted = false;
+    this.bestLevel;
   }
 
   init() {
@@ -55,9 +56,18 @@ class Game {
       return this.level;
     }
 
+    this.bestLevel = localStorage.getItem("bestLevel");
+    if (this.level > this.bestLevel) {
+      localStorage.setItem("bestLevel", this.level);
+    }
+
     textSize(60);
     fill(random(255), random(255), random(255));
     text(`Level: ${this.level}`, 10 / 1.2, 60);
+
+    textSize(60);
+    fill(random(255), random(255), random(255));
+    text(`Best Level: ${this.bestLevel}`, 1000, 60);
 
     if (
       this.player.x > 0 &&
@@ -79,7 +89,6 @@ class Game {
 
       this.player.setDir(0, 0);
       this.gameOver = true;
-      console.log("game over");
     }
   }
 }

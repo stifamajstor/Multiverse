@@ -15,13 +15,10 @@ class Portals {
   }
 
   collides(obj) {
-    //check if obj collides with self
-    //self completely to the left || self completely to the right
     if (this.x + this.width < obj.x || obj.x + obj.width < this.x) {
       return false;
     }
 
-    // self completely to the top || self completely to the bottom
     if (this.y + this.height < obj.y || obj.y + obj.height < this.y) {
       return false;
     }
