@@ -1,5 +1,0 @@
-class Explosion {
-    constructor() {
-        
-    }
-}

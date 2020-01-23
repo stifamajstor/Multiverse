@@ -10,7 +10,6 @@ class Game {
     this.background = new Background();
     this.player = new Player();
     this.portal = new Portals();
-    // this.backSong = loadSound("assests/NationDetoNation.mp3");
   }
 
   reset() {
@@ -39,10 +38,7 @@ class Game {
     this.background.draw();
     this.player.draw();
     this.portal.draw();
-    // if (!this.backSong.isPlaying()) {
-    //   //
-    //   this.backSong.play();
-    // }
+
 
     if (this.portal.collides(this.player)) {
       const newXPlayer = random(200, 1200);
@@ -83,11 +79,6 @@ class Game {
     } else {
       this.player.width = 100;
       this.player.height = 100;
-      // push();
-      // if (frameCount %  == 0) {
-      // this.player.explSound.play();
-
-      // pop(); }
       this.player.playerImg = this.player.img2;
       textSize(200);
       fill(random(255), random(255), random(255));

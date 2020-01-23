@@ -12,7 +12,6 @@ class Player {
     this.y = 300;
     this.xDir = 0;
     this.yDir = 0;
-    this.explSound = loadSound("assests/BombExplosion.mp3");
   }
 
   draw() {

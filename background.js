@@ -1,6 +1,5 @@
 class Background {
   constructor() {
-    
     this.back1 = loadImage("assests/background1.jpeg");
     this.back2 = loadImage("assests/background2.jpeg");
     this.back3 = loadImage("assests/background3.jpeg");
@@ -34,6 +33,7 @@ class Background {
       this.back14,
       this.back15
     ];
+
     this.randomBackg = random(this.backgrounds);
   }
 
