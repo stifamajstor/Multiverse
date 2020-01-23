@@ -1,3 +1,5 @@
+// let backgSong;
+
 function keyPressed() {
   if (!game.gameOver) {
     if (keyCode === LEFT_ARROW) {
@@ -18,13 +20,18 @@ function keyPressed() {
     draw();
     game.reset();
     game.gameOver = false;
+    // document.location.reload();
   }
 }
 
 const game = new Game();
 
+let backSong;
 function preload() {
   game.init();
+  if (!backSong) {
+    backSong = loadSound("assests/NationDetoNation.mp3");
+  }
 }
 
 function setup() {
@@ -32,6 +39,10 @@ function setup() {
 }
 
 function draw() {
+  if (!backSong.isPlaying() && game.started) {
+    console.log("PLAY");
+    backSong.play();
+  }
   if (
     keyCode === LEFT_ARROW ||
     keyCode === RIGHT_ARROW ||
@@ -43,6 +54,11 @@ function draw() {
   if (!game.started) {
     return game.drawStartScreen();
   }
+
+  // if (game.gameOver === true) {
+  //   game.backgSong.stop();
+  // }
+
   game.draw();
 }
 
