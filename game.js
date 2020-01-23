@@ -20,13 +20,17 @@ class Game {
     fill(random(255), random(255), random(255));
     text(`MULTIVERSE`, 180, 200);
 
-    textSize(40);
+    textSize(50);
     fill(random(255), random(255), random(255));
-    text(`Control Space Ship with UP, DOWN, LEFT and RIGHT arrows`, 180, 400);
+    text(`Guide the Spaceship to the portal to enter a new universe`, 70, 320);
 
-    textSize(60);
+    textSize(35);
     fill(random(255), random(255), random(255));
-    text(`Press any arrow to start`, 410, 590);
+    text(`Control Space Ship with UP, DOWN, LEFT and RIGHT arrows`, 220, 450);
+
+    textSize(45);
+    fill(random(255), random(255), random(255));
+    text(`Press any arrow to start`, 490, 590);
   }
 
   draw() {
@@ -35,8 +39,8 @@ class Game {
     this.portal.draw();
 
     if (this.portal.collides(this.player)) {
-      const newXPlayer = random(70, 1300);
-      const newYPlayer = random(70, 650);
+      const newXPlayer = random(100, 1300);
+      const newYPlayer = random(100, 650);
       const newXPortal = random(70, 1400 - this.portal.width);
       const newYPortal = random(70, 750 - this.portal.height);
       const randomNumberX = (Math.floor(Math.random() * 4) - 1) * 5;
@@ -67,11 +71,11 @@ class Game {
       this.player.img1 = this.player.img2;
       textSize(200);
       fill(random(255), random(255), random(255));
-      text(`Game Over`, 190, 400);
+      text(`Game Over`, 170, 400);
 
       textSize(70);
       fill(random(255), random(255), random(255));
-      text(`Press SPACE to restart`, 360, 600);
+      text(`Press SPACE to restart`, 330, 600);
 
       this.player.setDir(0, 0);
       this.gameOver = true;

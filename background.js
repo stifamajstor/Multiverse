@@ -10,6 +10,12 @@ class Background {
     this.back8 = loadImage("assests/background8.jpeg");
     this.back9 = loadImage("assests/background9.jpeg");
     this.back10 = loadImage("assests/background10.jpeg");
+    this.back11 = loadImage("assests/background11.jpeg");
+    this.back12 = loadImage("assests/background12.jpeg");
+    this.back13 = loadImage("assests/background13.jpeg");
+    this.back14 = loadImage("assests/background14.jpeg");
+    this.back15 = loadImage("assests/background15.jpeg");
+
     this.backgrounds = [
       this.back1,
       this.back2,
@@ -20,7 +26,12 @@ class Background {
       this.back7,
       this.back8,
       this.back9,
-      this.back10
+      this.back10,
+      this.back11,
+      this.back12,
+      this.back13,
+      this.back14,
+      this.back15
     ];
     this.randomBackg = random(this.backgrounds);
   }

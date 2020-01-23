@@ -1,6 +1,6 @@
 class Player {
   constructor() {
-    this.img1 = loadImage("assests/rocket.jpg");
+    this.img1 = loadImage("assests/ship_up.jpeg");
     this.img2 = loadImage("assests/explosion.gif");
     this.width = 70;
     this.height = 70;
